@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import Button from './components/baseui/Button/DangerButton';
+import Button from './components/baseui/button/DangerButton';
 import TicTacToe from './components/TicTacToe/TicTacToe';
 import "./App.css";
 

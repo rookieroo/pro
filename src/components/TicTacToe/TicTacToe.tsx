@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import './TicTacToe.module.css'
 
 interface SquareProps {
@@ -62,9 +61,6 @@ interface GameState {
 }
 
 class Game extends React.Component {
- constructor(props: any) {
-   super(props);
- }
 
  state: GameState = {
   history: [
