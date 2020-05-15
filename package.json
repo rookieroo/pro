@@ -17,12 +17,12 @@
     "@types/react-dom": "^16.9.8",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^7.0.4",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.2",
+    "react-scripts": "^3.3.0"
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-dom": "^16.13.1"
   },
   "browserslist": {
     "production": [
