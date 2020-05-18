@@ -1,7 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-function Square(props: any) {
+interface SquareProps {
+  value: string;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+interface BoardProps {
+  squares: string[];
+  // onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick: (i: number) => void;
+}
+
+function Square(props: SquareProps) {
  return (
    <button className="square" onClick={props.onClick}>
      {props.value}
@@ -9,8 +20,9 @@ function Square(props: any) {
  );
 }
 
-class Board extends React.Component {
- renderSquare(i: Number) {
+class Board extends React.Component<BoardProps> {
+
+ renderSquare(i: number) {
    return (
      <Square
        value={this.props.squares[i]}
@@ -42,21 +54,28 @@ class Board extends React.Component {
  }
 }
 
+interface GameState {
+  stepNumber: number;
+  xIsNext: boolean;
+  history: any[];
+}
+
 class Game extends React.Component {
- constructor(props) {
+ constructor(props: any) {
    super(props);
-   this.state = {
-     history: [
-       {
-         squares: Array(9).fill(null)
-       }
-     ],
-     stepNumber: 0,
-     xIsNext: true
-   };
  }
 
- handleClick(i) {
+ state: GameState = {
+  history: [
+    {
+      squares: Array(9).fill(null)
+    }
+  ],
+  stepNumber: 0,
+  xIsNext: true
+};
+
+ handleClick(i: number) {
    const history = this.state.history.slice(0, this.state.stepNumber + 1);
    const current = history[history.length - 1];
    const squares = current.squares.slice();
@@ -75,7 +94,7 @@ class Game extends React.Component {
    });
  }
 
- jumpTo(step) {
+ jumpTo(step: number) {
    this.setState({
      stepNumber: step,
      xIsNext: (step % 2) === 0
@@ -124,9 +143,9 @@ class Game extends React.Component {
 
 // ========================================
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<Game/>, document.getElementById("root"));
 
-function calculateWinner(squares) {
+function calculateWinner(squares: any[]) {
  const lines = [
    [0, 1, 2],
    [3, 4, 5],
