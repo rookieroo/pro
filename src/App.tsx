@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import Button from './components/baseui/Button/DangerButton';
+import TicTacToe from './components/TicTacToe/TicTacToe';
 import "./App.css";
 
 const App: React.FC = () => {
@@ -8,6 +9,7 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <Button></Button>
+        <TicTacToe></TicTacToe>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
