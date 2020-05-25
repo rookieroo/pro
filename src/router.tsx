@@ -1,14 +1,15 @@
-import React from "react";
+import React, { Suspense, lazy } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-import App from './App'
-import Button from './components/baseui/button/DangerButton';
-import TicTacToe from './components/TicTacToe/TicTacToe';
-import ListOfWords from './components/baseui/listofwords/ListOfWords'
+
+const App = lazy(() => import('./App'));
+const Button = lazy(() => import('./components/baseui/button/DangerButton'));
+const TicTacToe = lazy(() => import('./components/TicTacToe/TicTacToe'));
+const ListOfWords = lazy(() => import('./components/baseui/listofwords/ListOfWords'));
+const Loading = lazy(() => import('./components/baseui/loading/loading'));
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -22,6 +23,7 @@ import ListOfWords from './components/baseui/listofwords/ListOfWords'
 export default function BasicExample() {
   return (
     <Router>
+      <Suspense fallback={<div>loading...</div>}>
         {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
@@ -43,6 +45,7 @@ export default function BasicExample() {
             <ListOfWords words={['marklar']} />
           </Route>
         </Switch>
+        </Suspense>
     </Router>
   );
 }
