@@ -40,7 +40,7 @@ export default function BasicExample() {
             <Button />
           </Route>
           <Route path="/listOfWords">
-            <ListOfWords />
+            <ListOfWords words={['marklar']} />
           </Route>
         </Switch>
     </Router>
