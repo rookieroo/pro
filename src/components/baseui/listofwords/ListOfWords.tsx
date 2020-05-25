@@ -22,8 +22,8 @@ class WordAdder extends React.Component<ListProps> {
 
  handleClick() {
    // This section is bad style and causes a bug
-   const words = this.state.words;
-   words.push('marklar');
+   const words: any[] = this.state.words;
+   words.push('marklar');  
    this.setState({words: words});
  }
 
@@ -37,4 +37,4 @@ class WordAdder extends React.Component<ListProps> {
  }
 }
 
-export default ListOfWords;
+export default WordAdder;
