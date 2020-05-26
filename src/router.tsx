@@ -4,12 +4,13 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Loading from './components/baseui/loading/loading'
 
 const App = lazy(() => import('./App'));
 const Button = lazy(() => import('./components/baseui/button/DangerButton'));
 const TicTacToe = lazy(() => import('./components/TicTacToe/TicTacToe'));
 const ListOfWords = lazy(() => import('./components/baseui/listofwords/ListOfWords'));
-const Loading = lazy(() => import('./components/baseui/loading/loading'));
+const Theme = lazy(() => import('./components/baseui/theme/theme'));
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -23,7 +24,7 @@ const Loading = lazy(() => import('./components/baseui/loading/loading'));
 export default function BasicExample() {
   return (
     <Router>
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={Loading}>
         {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
@@ -43,6 +44,9 @@ export default function BasicExample() {
           </Route>
           <Route path="/listOfWords">
             <ListOfWords words={['marklar']} />
+          </Route>
+          <Route path="/theme">
+            <Theme />
           </Route>
         </Switch>
         </Suspense>
