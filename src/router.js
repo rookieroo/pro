@@ -7,7 +7,7 @@ import {
 import Loading from './components/baseui/loading/loading'
 
 const App = lazy(() => import('./App'));
-const DangerButton = lazy(() => import('./components/baseui/Button/DangerButton'));
+const DangerButton = lazy(() => import('./components/baseui/button/DangerButton'));
 const TicTacToe = lazy(() => import('./components/TicTacToe/TicTacToe'));
 const ListOfWords = lazy(() => import('./components/baseui/listofwords/ListOfWords'));
 const Theme = lazy(() => import('./components/baseui/theme/theme'));
