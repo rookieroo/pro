@@ -3,11 +3,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
+} from 'react-router-dom';
 import Loading from './components/baseui/loading/loading'
 
 const App = lazy(() => import('./App'));
-const Button = lazy(() => import('./components/baseui/button/DangerButton'));
+const DangerButton = lazy(() => import('./components/baseui/Button/DangerButton'));
 const TicTacToe = lazy(() => import('./components/TicTacToe/TicTacToe'));
 const ListOfWords = lazy(() => import('./components/baseui/listofwords/ListOfWords'));
 const Theme = lazy(() => import('./components/baseui/theme/theme'));
@@ -40,7 +40,7 @@ export default function BasicExample() {
             <TicTacToe />
           </Route>
           <Route path="/button">
-            <Button />
+            <DangerButton />
           </Route>
           <Route path="/listOfWords">
             <ListOfWords words={['marklar']} />
