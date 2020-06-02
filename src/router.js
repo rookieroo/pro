@@ -12,6 +12,7 @@ const TicTacToe = lazy(() => import('./components/TicTacToe/TicTacToe'));
 const ListOfWords = lazy(() => import('./components/baseui/listofwords/ListOfWords'));
 const Theme = lazy(() => import('./components/baseui/theme/theme'));
 const Modal = lazy(() => import('./components/baseui/modal/Modal'));
+const Clock = lazy(() => import('./components/baseui/clock/Clock'));
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -51,6 +52,9 @@ export default function BasicExample() {
           </Route>
           <Route path="/modal">
             <Modal />
+          </Route>
+          <Route path="/clock">
+            <Clock />
           </Route>
         </Switch>
         </Suspense>
