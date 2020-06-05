@@ -11,6 +11,7 @@ const DangerButton = lazy(() => import('./components/baseui/button/DangerButton'
 const TicTacToe = lazy(() => import('./components/TicTacToe/TicTacToe'));
 const ListOfWords = lazy(() => import('./components/baseui/listofwords/ListOfWords'));
 const Theme = lazy(() => import('./components/baseui/theme/theme'));
+const Modal = lazy(() => import('./components/baseui/modal/Modal'));
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -24,7 +25,7 @@ const Theme = lazy(() => import('./components/baseui/theme/theme'));
 export default function BasicExample() {
   return (
     <Router>
-      <Suspense fallback={Loading}>
+      <Suspense fallback={<Loading/>}>
         {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
@@ -47,6 +48,9 @@ export default function BasicExample() {
           </Route>
           <Route path="/theme">
             <Theme />
+          </Route>
+          <Route path="/modal">
+            <Modal />
           </Route>
         </Switch>
         </Suspense>

@@ -4,6 +4,7 @@ import logo from './logo.svg'
 class Loading extends React.Component {
   render() {
     return <div>
+            loading...
             <img src={logo} alt="loading"/>
           </div>
   }
